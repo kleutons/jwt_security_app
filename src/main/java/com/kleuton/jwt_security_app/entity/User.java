@@ -33,6 +33,12 @@ public class User implements UserDetails {
     @Column(name = "role")
     private UserRole role;
 
+    public User(String login, String password, UserRole role){
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
     //Roles
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
